@@ -25,9 +25,7 @@ function App() {
     return (
       <footer className="App-footer">
         <p>
-          App developed with
-          <img src={logo} className="App-logo" alt="React" title="React" />
-          <b>React</b> by Tadeu Jerônimo
+          Developed with<img src={logo} className="App-logo" alt="React" title="React" /><b>React</b> by Tadeu Jerônimo
         </p>
       </footer>
     );
@@ -85,13 +83,13 @@ function App() {
     const historyElement = document.querySelector("#history");
     const showMoreButton = document.querySelector("#showMoreButton");
     const resetButton = document.querySelector("#resetButton");
-    const recentHistory = showAllHistory ? history : history.slice(0, 5);
+    const recentHistory = showAllHistory ? history : history.slice(0, 3);
 
     historyElement.innerHTML = recentHistory
       .map((item) => `<li>${item}</li>`)
       .join("");
 
-    if (history.length > 5) {
+    if (history.length > 3) {
       showMoreButton.disabled = false;
       showMoreButton.textContent = showAllHistory
         ? "Mostrar menos (-)"
