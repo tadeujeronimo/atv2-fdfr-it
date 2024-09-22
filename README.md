@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# atv2-fdfr-it
+
+Atividade 2 do curso Fundamentos de Desenvolvimento Front end com React do Bootcamp Front-end Development da iTalents.
+
+## Projeto começando com react
+
+#### - Desenvolver um projeto de estudo em React:
+
+A aplicação foi criada com create-react-app.
+
+#### - Remover os arquivos não utilizados do projeto:
+
+Foram removidos App.test.js, reportWebVitals e setupTests.js, assim como as suas chamadas dentro da aplicação, conforme abordado durante a aula pelo professor. Como também, foram reescritos o App.js e App.css.
+
+#### - Usar os conceitos do JSX e das revisões da unidade 1:
+
+Foi utilizado com base a aplicação da [atividade 1](https://github.com/tadeujeronimo/atv1-fdfr-it) (mantendo a importação de classe e regras) com algumas adaptações utilizando Vanilla JS, pois não ainda não deveríamos utilizar Hooks nessa unidade. Como também, foram utilizados apenas componentes internos para entrega, ou seja, sem modularização. 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +86,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Licença
+
+[MIT](https://choosealicense.com/licenses/mit/)

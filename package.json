@@ -1,5 +1,6 @@
 {
   "name": "atv2-fdfr-it",
+  "description": "Atividade 2 do curso Fundamentos de Desenvolvimento Front end com React do Bootcamp Front-end Development da iTalents.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,5 +35,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "author": "Tadeu Jerônimo <tadeus.jeronimo@gmail.com>",
+  "license": "MIT"
 }
