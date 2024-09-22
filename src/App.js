@@ -27,7 +27,7 @@ function App() {
         <p>
           App developed with
           <img src={logo} className="App-logo" alt="React" title="React" />
-          <b>React</b> by Tadeu Jerónimo
+          <b>React</b> by Tadeu Jerônimo
         </p>
       </footer>
     );
