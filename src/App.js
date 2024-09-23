@@ -82,23 +82,26 @@ function App() {
   const updateHistoryDisplay = () => {
     const historyElement = document.querySelector("#history");
     const showMoreButton = document.querySelector("#showMoreButton");
-    const resetButton = document.querySelector("#resetButton");
+    //const resetButton = document.querySelector("#resetButton");
     const recentHistory = showAllHistory ? history : history.slice(0, 3);
+    const qtdHistory = document.querySelector("#qtdHistory");
 
     historyElement.innerHTML = recentHistory
       .map((item) => `<li>${item}</li>`)
       .join("");
 
+    qtdHistory.value = history.length;
+
     if (history.length > 3) {
-      showMoreButton.disabled = false;
+      //showMoreButton.disabled = false;
       showMoreButton.textContent = showAllHistory
         ? "Mostrar menos (-)"
         : "Mostrar mais (+)";
-    } else {
+    } /*else {
       showMoreButton.disabled = true;
-    }
+    }*/
 
-    resetButton.disabled = history.length === 0;
+    //resetButton.disabled = history.length === 0;
   };
 
   // Função para limpar os campos do formulário.
@@ -111,18 +114,26 @@ function App() {
 
   // Função para mostrar ou ocultar o histórico.
   const toggleHistoryDisplay = () => {
-    showAllHistory = !showAllHistory;
-    updateHistoryDisplay();
+    if (history.length > 3) {
+      showAllHistory = !showAllHistory;
+      updateHistoryDisplay();  
+    } else {
+      alert("A partir de 4 registros no histórico.");
+    }
   };
 
   // Função para limpar o histórico.
   const resetHistory = () => {
-    history = [];
-    updateHistoryDisplay();
+    if (history.length > 0) { 
+      history = [];
+      updateHistoryDisplay();
+    } else {
+      alert("O histórico está vazio.");
+    }
   };
-
+  
   // Quando a janela carregar, configure os ouvintes de eventos.
-  window.addEventListener("load", () => {
+  /*window.addEventListener("load", () => {
     document
       .querySelector("#calculateButton")
       .addEventListener("click", calculateHandle);
@@ -138,7 +149,7 @@ function App() {
     document
       .querySelector("#showMoreButton")
       .addEventListener("click", toggleHistoryDisplay);
-  });
+  });*/
 
   return (
     <div className="App">
@@ -166,27 +177,42 @@ function App() {
             <input type="text" id="result" disabled />
           </div>
           <div className="button-group">
-            <button type="button" id="calculateButton">
+            <button
+              type="button"
+              id="calculateButton"
+              onClick={calculateHandle}
+            >
               Calcular
             </button>
-            <button type="button" id="clearButton">
+            <button type="button" id="clearButton" onClick={clearFields}>
               Limpar
             </button>
           </div>
         </form>
 
         <hr />
-        <h3>Histórico</h3>
-        <ul id="history"></ul>
+        <div id="historyContainer">
+          <p>Histórico <input type="text" id="qtdHistory" size="1" value="0" disabled/></p>
+          <ul id="history"></ul>
 
-        <div className="button-group">
-          <button type="button" id="showMoreButton" disabled>
-            Mostrar mais (+)
-          </button>
-          <button type="button" id="resetButton" disabled>
-            Limpar Histórico
-          </button>
+          <div className="button-group">
+            <button
+              type="button"
+              id="showMoreButton"
+              onClick={toggleHistoryDisplay}
+            >
+              Mostrar mais (+)
+            </button>
+            <button
+              type="button"
+              id="resetButton"
+              onClick={resetHistory}
+            >
+              Limpar Histórico
+            </button>
+          </div>
         </div>
+        
       </main>
 
       <AppFooter />

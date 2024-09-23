@@ -107,8 +107,13 @@ button#clearButton:focus {
   box-shadow: 0 0 0 3px #0BAADF;
 }
 
-h2 {
-  margin-top: 20px;
+div#historyContainer  p {
+  font-size: large;
+  font-weight: bold;
+}
+
+#qtdHistory {
+  text-align: right;
 }
 
 ul#history {
